@@ -60,9 +60,9 @@ reinitialized with the method `element.reinit`
 
 ## Reference:
 
-- - -
+* `Ewa.init(element, state[, arg1, arg2, arg3, arg4, arg5])`
 
-### `Ewa.init(element, state[, arg1, arg2, arg3, arg4, arg5])`
+- - -
 
 Turns `element` into a dynamic, reflective Ewa element with stack-based statefulness.
 
@@ -75,24 +75,24 @@ the Ewa programmer from writing non-portable code).
 If `state` has the special `init` or `exit` fields, then their values should be functions
 that will be called when the element enters and exits `state`, respectively. `arg1`, `arg2`,
 `arg3`, `arg4`, and `arg5` are passed to the `init` or `exit` functions. `element` can be
-accessed within the body of these functions using the special `this` keyword. 
+acces
+
+* `Ewa.initDescendentsByClassName(element,searchClass, state[, arg1, arg2, arg3, arg4, arg5])`
 
 - - -
-
-### `Ewa.initDescendentsByClassName(element,searchClass, state[, arg1, arg2, arg3, arg4, arg5])`
 
 Calls `Ewa.init` on all descendents of `element` with the class `searchClass` with `state`
 and `arg1`, `arg2`, `arg3`, `arg4`, `arg5`
 
-- - -
+* `Ewa.reinitDescendentsByClassName(element,searchClass)`
 
-### `Ewa.reinitDescendentsByClassName(element,searchClass)`
+- - -
 
 Calls `element.reinit` on all descendents of `element` with `searchClass`
 
-- - -
+* `Ewa.getDescendentsByClassName(element, searchClass)`
 
-### `Ewa.getDescendentsByClassName(element, searchClass)`
+- - -
 
 Returns an array of all the descendents of `element` with the class `searchClass`. Used
 by `Ewa.initDescendentsByClassName` and `Ewa.reinitDescendentsByClassName`
@@ -100,72 +100,72 @@ by `Ewa.initDescendentsByClassName` and `Ewa.reinitDescendentsByClassName`
 The following methods are added to a DOM element once it has been turned into an Ewa element
 using `Ewa.init`:
 
-- - -
+* `element.getInherited(key)`
 
-### `element.getInherited(key)`
+- - -
 
 Returns the value associated with `key` for the first ancsestor-or-self element that
 has the key.
 
-- - -
+* `element.setIngerited(key, value)`
 
-### `element.setIngerited(key, value)`
+- - -
 
 Sets the value associated with `key` to `value` for the first ancestor-or-self element
 that has the key.
 
-- - -
+* `element.getInheritedKeyOwnder(key)`
 
-### `element.getInheritedKeyOwnder(key)`
+- - -
 
 Returns the first element-or-self element that has the key `key`
 
-- - -
+* `element.switchState(state[, arg1, arg2, arg3, arg4, arg5])`
 
-### `element.switchState(state[, arg1, arg2, arg3, arg4, arg5])`
+- - -
 
 Switches element to state `state`, but first cleaning up the key/val pairs associated
 with the current state and returning them to their previous values. `init` and `exit`
 functions are run at this time, `arg1`, `arg2`, `arg3`, `arg4`, and `arg5` are passed to
 the `init` function if provided.
 
-- - -
+* `element.launchState(state[, arg1, arg2, arg3, arg4, arg5])`
 
-### `element.launchState(state[, arg1, arg2, arg3, arg4, arg5])`
+- - -
 
 Like `element.switchState` except the current state can later be returned to be calling
 `element.popState`.
 
-- - -
+* `element.popState(arg1, arg2, arg3, arg4, arg5)`
 
-### `element.popState(arg1, arg2, arg3, arg4, arg5)`
+- - -
 
 Returns element to the previous state. `arg1`, `arg2`, `arg3`, `arg4`, and `arg5` are
 passed to the continuation function associated with the previous state (if there is one).
 
-- - -
+* `element.launchStateBecause(k,state[, arg1, arg2, arg3, arg4, arg5])`
 
-### `element.launchStateBecause(k,state[, arg1, arg2, arg3, arg4, arg5])`
+- - -
 
 like `element.launchState` except the funciton `k` gets called with the arguments from
 `element.popState` when `state` is returned
 
-- - -
+* `element.initDescendentsByClassName(searchClass,state[, arg1, arg2, arg3, arg4, arg5]);`
 
-### `element.initDescendentsByClassName(searchClass,state[, arg1, arg2, arg3, arg4, arg5]);`
+- - -
 
 Calls `Ewa.init` on all descendents of element with the class `searchClass` with `state`
 and `arg1`, `arg2`, `arg3`, `arg4`, `arg5`
 
-- - -    
+* `element.reinitDescendentsByClassName(searchClass,state[, arg1, arg2, arg3, arg4, arg5]);`
 
-### `element.reinitDescendentsByClassName(searchClass,state[, arg1, arg2, arg3, arg4, arg5]);`
+- - -    
 
 Calls `element.reinit` on all descendents of `element` with `searchClass`
 
-- - -
+* `element.getDescendentsByClassName(selectClass)`
 
-### `element.getDescendentsByClassName(selectClass)`
+- - -
 
 Returns an array of all the descendents of `element` with the class `searchClass`. Used
 by `element.initDescendentsByClassName` and `element.reinitDescendentsByClassName`
