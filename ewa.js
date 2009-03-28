@@ -1,22 +1,5 @@
-﻿//
-// Documentation:
 //
-// Ewa.init(element, state[, arg1, arg2, arg3, arg4, arg5])
-// Ewa.initDescendentsByClassName(element,searchClass, state[, arg1, arg2, arg3, arg4, arg5])
-// Ewa.reinitDescendentsByClassName(element,searchClass, state[, arg1, arg2, arg3, arg4, arg5])
-// Ewa.getDescendentsByClassName(element, searchClass)
-//
-// element.getInherited(key)
-// element.setInherited(key, value)
-// element.getInheritedKeyOwner(key)
-// element.switchState(state[, arg1, arg2, arg3, arg4, arg5])
-// element.launchState(state[, arg1, arg2, arg3, arg4, arg5])
-// element.popState(k,state[, arg1, arg2, arg3, arg4, arg5])
-// element.launchStateBecause(k,state[, arg1, arg2, arg3, arg4, arg5])
-// element.reinit()
-// element.initDescendentsByClassName(selectClass,state[, arg1, arg2, arg3, arg4, arg5]);
-// element.reinitDescendentsByClassName(selectClass,state[, arg1, arg2, arg3, arg4, arg5]);
-// element.getDescendentsByClassName(selectClass)
+// http://github.com/nallen05/ewa
 //
 
 var Ewa = {
